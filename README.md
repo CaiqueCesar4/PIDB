@@ -1,2 +1,2 @@
 # PIDB
-Banco de dados do projeito interdisciplinar de banco de dados
+Banco de dados do projeto interdisciplinar de banco de dados
