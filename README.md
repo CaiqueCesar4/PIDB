@@ -31,7 +31,7 @@ PROJETOS/
 
 ---
 
-## 🗂️ Diagrama do Banco de Dados
+## Diagrama do Banco de Dados
 
 Abaixo está o modelo Entidade-Relacionamento (ER) desenvolvido para o projeto:
 
@@ -45,7 +45,7 @@ Abaixo está o modelo Entidade-Relacionamento (ER) desenvolvido para o projeto:
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **SQLite** — Banco de dados relacional utilizado no projeto.  
 - **dbdiagram.io** — Ferramenta usada para criar o modelo ER.  
