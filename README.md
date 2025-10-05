@@ -4,7 +4,7 @@ Este repositório contém o projeto desenvolvido para a disciplina de **Projeto 
 
 ---
 
-## 👤 Autor
+## Autor
 
 **Caique Cesar Lima da Silva**  
 RA: 33043
