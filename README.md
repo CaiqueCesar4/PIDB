@@ -1,54 +1,51 @@
-# PIDB
-Banco de dados do projeto interdisciplinar de banco de dados
+# Projeto Interdisciplinar de Banco de Dados
 
-==============================================================
+Este repositório contém o projeto desenvolvido para a disciplina de **Projeto Interdisciplinar de Banco de Dados** da turma de **TCC**.
 
-# ER
+---
 
-// Tabela principal: Orçamentos
-Table TB_ORCAMENTOS {
-  id int [pk, increment]
-  nome_orcamento varchar(255)
-  data_criacao date
-  descricao varchar(300)
-}
+## 👤 Autor
 
-// Tabela de apoio: Módulos
-Table TB_MODULOS {
-  id int [pk, increment]
-  nome_modulo varchar(80)
-  valor_base decimal(10,2)
-}
+**Caique Cesar Lima da Silva**  
+RA: 33043
 
-// Tabela de apoio: Mão de Obra
-Table TB_MAO_DE_OBRA {
-  id int [pk, increment]
-  nome varchar (255)
-  custo_dia decimal(10,2)
-}
+---
 
-// --- Tabelas de Junção (Relacionamentos N:N) ---
+## Descrição do Projeto
 
-// Junção entre TB_ORCAMENTOS e TB_MODULOS
-Table TB_ORCAMENTO_MODULO {
-  orcamento_id int [ref: > TB_ORCAMENTOS.id]
-  modulo_id int [ref: > TB_MODULOS.id]
-  quantidade int
-  valor_total_modulo decimal(10,2)
+O projeto tem como objetivo modelar um sistema de **gerenciamento de orçamentos para marcenaria**, permitindo o controle de módulos, mão de obra e composição dos orçamentos.
 
-  Indexes {
-    (orcamento_id, modulo_id) [pk]
-  }
-}
+A modelagem foi desenvolvida com base em um banco de dados relacional, utilizando o **SQLite** como sistema de gerenciamento de banco de dados.
 
-// Junção entre TB_ORCAMENTOS e TB_MAO_DE_OBRA
-Table TB_ORCAMENTO_MAO_DE_OBRA {
-  orcamento_id int [ref: > TB_ORCAMENTOS.id]
-  mao_de_obra_id int [ref: > TB_MAO_DE_OBRA.id]
-  dias_utilizados int
-  valor_total_servico decimal (10,2)
+---
 
-  Indexes {
-    (orcamento_id,  mao_de_obra_id) [pk]
-  }
-}
+## Estrutura do Repositório
+
+PROJETOS/
+│
+├── diagrama_bd.png # Diagrama Entidade-Relacionamento (ER)
+└── outros arquivos...
+
+
+---
+
+## 🗂️ Diagrama do Banco de Dados
+
+Abaixo está o modelo Entidade-Relacionamento (ER) desenvolvido para o projeto:
+
+![Diagrama do Banco de Dados](PROJETOS/diagrama_bd.png)
+
+> O diagrama apresenta as principais entidades do sistema e seus relacionamentos:
+> - **TB_ORCAMENTOS**: tabela principal que armazena os orçamentos criados.  
+> - **TB_MODULOS**: catálogo de módulos disponíveis com seus valores base.  
+> - **TB_MAO_DE_OBRA**: cadastro de serviços e custos de mão de obra.  
+> - **TB_ORCAMENTO_MODULO** e **TB_ORCAMENTO_MAO_DE_OBRA**: tabelas de junção que representam os relacionamentos N:N entre orçamentos e seus componentes.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **SQLite** — Banco de dados relacional utilizado no projeto.  
+- **dbdiagram.io** — Ferramenta usada para criar o modelo ER.  
+- **GitHub** — Plataforma para versionamento e entrega do projeto.
+
