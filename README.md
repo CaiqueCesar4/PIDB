@@ -1,2 +1,53 @@
 # PIDB
 Banco de dados do projeto interdisciplinar de banco de dados
+==============================================================
+
+# ER
+
+// Tabela principal: Orçamentos
+Table TB_ORCAMENTOS {
+  id int [pk, increment]
+  nome_orcamento varchar(255)
+  data_criacao date
+  descricao varchar(300)
+}
+
+// Tabela de apoio: Módulos
+Table TB_MODULOS {
+  id int [pk, increment]
+  nome_modulo varchar(80)
+  valor_base decimal(10,2)
+}
+
+// Tabela de apoio: Mão de Obra
+Table TB_MAO_DE_OBRA {
+  id int [pk, increment]
+  nome varchar (255)
+  custo_dia decimal(10,2)
+}
+
+// --- Tabelas de Junção (Relacionamentos N:N) ---
+
+// Junção entre TB_ORCAMENTOS e TB_MODULOS
+Table TB_ORCAMENTO_MODULO {
+  orcamento_id int [ref: > TB_ORCAMENTOS.id]
+  modulo_id int [ref: > TB_MODULOS.id]
+  quantidade int
+  valor_total_modulo decimal(10,2)
+
+  Indexes {
+    (orcamento_id, modulo_id) [pk]
+  }
+}
+
+// Junção entre TB_ORCAMENTOS e TB_MAO_DE_OBRA
+Table TB_ORCAMENTO_MAO_DE_OBRA {
+  orcamento_id int [ref: > TB_ORCAMENTOS.id]
+  mao_de_obra_id int [ref: > TB_MAO_DE_OBRA.id]
+  dias_utilizados int
+  valor_total_servico decimal (10,2)
+
+  Indexes {
+    (orcamento_id,  mao_de_obra_id) [pk]
+  }
+}
