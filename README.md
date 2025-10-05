@@ -23,7 +23,9 @@ A modelagem foi desenvolvida com base em um banco de dados relacional, utilizand
 
 PROJETOS/
 │
+
 ├── diagrama_bd.png # Diagrama Entidade-Relacionamento (ER)
+
 └── outros arquivos...
 
 
